@@ -29,7 +29,7 @@ describe('pet aging', () => {
     describe('the effects of aging', () => {
         it('shows the pet has a initial hunger', () => {
             const pet = new Pet('Fido')
-            expect(pet.huger).toEqual(0)
+            expect(pet.hunger).toEqual(0)
         })
         it('shows the pet has an initial fitness', () => {
             const pet = new Pet('Fido')
