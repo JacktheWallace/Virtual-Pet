@@ -25,4 +25,15 @@ describe('pet aging', () => {
         pet.growUp()
         expect(pet.age).toEqual(1);
     });
+
+    describe('the effects of aging', () => {
+        it('shows the pet has a initial hunger', () => {
+            const pet = new Pet('Fido')
+            expect(pet.huger).toEqual(0)
+        })
+        it('shows the pet has an initial fitness', () => {
+            const pet = new Pet('Fido')
+            expect(pet.fitness).toEqual(100)
+        })
+    })
 });
