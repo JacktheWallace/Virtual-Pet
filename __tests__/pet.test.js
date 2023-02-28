@@ -31,9 +31,19 @@ describe('pet aging', () => {
             const pet = new Pet('Fido')
             expect(pet.hunger).toEqual(0)
         })
+        it('increases the pets hunger when it ages', () => {
+            const pet = new Pet('Fido')
+            pet.growUp()
+            expect(pet.hunger).toEqual(5)
+        })
         it('shows the pet has an initial fitness', () => {
             const pet = new Pet('Fido')
             expect(pet.fitness).toEqual(100)
+        })
+        it('decreases pet fitness when it ages', () => {
+            const pet = new Pet('Fido')
+            pet.growUp()
+            expect(pet.fitness).toEqual(75)
         })
     })
 });
