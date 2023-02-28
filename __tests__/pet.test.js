@@ -20,7 +20,7 @@ describe('pet aging', () => {
 
         expect(pet.age).toEqual(0);
     });
-    xit('incriments the pets age by 1 when growUp() is run', () => {
+    it('incriments the pets age by 1 when growUp() is run', () => {
         const pet = new Pet('Fido')
         pet.growUp()
         expect(pet.age).toEqual(1);
