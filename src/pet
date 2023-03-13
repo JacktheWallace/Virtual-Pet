@@ -15,7 +15,7 @@ function Pet(name) {
        if((this.fitness += 10) >= 10) {
         this.fitness = 10;
     } else {
-        this.fitness = this.fitness += 10;
+        this.fitness += 10;
         };
     };
 
