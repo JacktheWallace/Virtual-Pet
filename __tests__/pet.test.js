@@ -61,6 +61,12 @@ describe('Walking the pet', () => {
         pet.walk();
         expect(pet.fitness).toEqual(10)
     });
+    it('throws an error if the pet is not alive', () => {
+        const pet = new Pet('Fido')
+        pet.fitness = 0
+        expect(pet.walk()).toThrow('Your pet is no longer alive :(')
+
+    });
 
 });
 
@@ -76,6 +82,12 @@ describe('Feeding the pet', () => {
         pet.hunger = 2;
         pet.feed();
         expect(pet.hunger).toEqual(0)
+    });
+    it('throws an error if the pet is not alive', () => {
+        const pet = new Pet('Fido')
+        pet.hunger = 0
+        expect(pet.feed()).toThrow('Your pet is no longer alive :(')
+
     });
 });
 
@@ -99,6 +111,12 @@ describe('Checkup', () => {
     it('Returns all is well when the pets hunger and fitness are high', () => {
         const pet = new Pet('Fido');
         expect(pet.checkUp()).toEqual('All is well')
+    });
+    it('throws an error if the pet is not alive', () => {
+        const pet = new Pet('Fido')
+        pet.fitness = 0
+        expect(pet.checkUp()).toThrow('Your pet is no longer alive :(')
+
     });
 });
 
