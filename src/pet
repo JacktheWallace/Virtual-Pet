@@ -41,7 +41,7 @@ function Pet(name) {
         } else {
             console.log('All is well')
             return "All is well"
-        }
-    }
+        };
+    };
 
 module.exports = Pet
