@@ -38,12 +38,12 @@ describe('pet aging', () => {
         })
         it('shows the pet has an initial fitness', () => {
             const pet = new Pet('Fido')
-            expect(pet.fitness).toEqual(100)
+            expect(pet.fitness).toEqual(10)
         })
         it('decreases pet fitness when it ages', () => {
             const pet = new Pet('Fido')
             pet.growUp()
-            expect(pet.fitness).toEqual(75)
+            expect(pet.fitness).toEqual(7)
         });
     });
 });
@@ -51,14 +51,15 @@ describe('pet aging', () => {
 describe('walking the pet', () => {
     it('increases the pets fitness', () => {
         const pet = new Pet('Fido')
-        pet.growUp()
-        pet.walk()
-        expect(pet.fitness).toEqual(100)
+        pet.fitness = 6
+        pet.walk();
+        expect(pet.fitness).toEqual(10)
     });
     it('does not allow the pets fitness to go above 100', () => {
         const pet = new Pet('Fido')
-        pet.walk()
-        expect(pet.fitness).toEqual(100)
+        pet.fitness = 9;
+        pet.walk();
+        expect(pet.fitness).toEqual(10)
     });
 
 });
