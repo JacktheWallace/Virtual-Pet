@@ -63,3 +63,18 @@ describe('walking the pet', () => {
     });
 
 });
+
+describe('feeding the pet', () => {
+    it('reduces the pets hunger', () => {
+        const pet = new Pet('Fido')
+        pet.hunger = 5;
+        pet.feed();
+        expect(pet.hunger).toEqual(0)
+    });
+    it('does not allow the pets hunger to become less than 0', () => {
+        const pet = new Pet('Fido')
+        pet.hunger = 2;
+        pet.feed();
+        expect(pet.hunger).toEqual(0)
+    });
+});
