@@ -85,7 +85,7 @@ describe('checkup', () => {
         pet.hunger = 15;
         expect(pet.checkUp()).toEqual('I am hungry')
     });
-    it('it returns I need a walk when fitness is bellow 6', () => {
+    it('it returns I need a walk when fitness is bellow 5', () => {
         const pet = new Pet('Fido');
         pet.fitness = 3;
         expect(pet.checkUp()).toEqual('I need a walk')
@@ -94,7 +94,7 @@ describe('checkup', () => {
         const pet = new Pet('Fido');
         pet.fitness = 3;
         pet.hunger = 15;
-        expect(pet.checkup()).toEqual('I am hungry and I need a walk')
+        expect(pet.checkUp()).toEqual('I am hungry and I need a walk')
     });
     it('returns all is well when the pets hunger and fitness are high', () => {
         const pet = new Pet('Fido');
