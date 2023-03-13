@@ -64,7 +64,7 @@ describe('Walking the pet', () => {
     it('throws an error if the pet is not alive', () => {
         const pet = new Pet('Fido')
         pet.fitness = 0
-        expect(pet.walk()).toThrow('Your pet is no longer alive :(')
+        expect(() => pet.walk()).toThrow('Your pet is no longer alive :(')
 
     });
 
@@ -85,8 +85,8 @@ describe('Feeding the pet', () => {
     });
     it('throws an error if the pet is not alive', () => {
         const pet = new Pet('Fido')
-        pet.hunger = 0
-        expect(pet.feed()).toThrow('Your pet is no longer alive :(')
+        pet.hunger = 20
+        expect(() => pet.feed()).toThrow('Your pet is no longer alive :(')
 
     });
 });
@@ -115,7 +115,7 @@ describe('Checkup', () => {
     it('throws an error if the pet is not alive', () => {
         const pet = new Pet('Fido')
         pet.fitness = 0
-        expect(pet.checkUp()).toThrow('Your pet is no longer alive :(')
+        expect(() => pet.checkUp()).toThrow('Your pet is no longer alive :(')
 
     });
 });
@@ -131,9 +131,9 @@ it('new pets start alive', () => {
         pet.fitness = -1;
         expect(pet.isAlive).toEqual(false)
     });
-    it('kills the pet if its hunger is 10 or more', () => {
+    it('kills the pet if its hunger is 20 or more', () => {
     const pet = new Pet('Fido')
-        pet.hunger = 11
+        pet.hunger = 21
         expect(pet.isAlive).toEqual(false)
     });
     it('kills the pet if its age is 30 or more', () => {
