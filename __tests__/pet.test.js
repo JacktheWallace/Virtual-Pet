@@ -147,10 +147,15 @@ it('new pets start alive', () => {
             const pet = new Pet('Fido');
             expect(pet.children).toBeInstanceOf(Object)
         });
-        it('has a prototype that allows you to have one pet adopt another pet as a child', () => {
+        it('allows one pet adopt another pet as a child', () => {
             const parent = new Pet('Fido');
             const child = new Pet('Frida');
             parent.adopt(child)
             expect(parent.children).toBe([ child ])
         });
+        it('does not allow a pet to adopt if they are dead', () => {
+            const pet = new Pet('Fido')
+            pet.age = 31
+            expect(() => pet.adopt()).toThrow('Your pet is no longer alive :(')
+        })
 }); 
