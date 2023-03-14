@@ -142,4 +142,9 @@ it('new pets start alive', () => {
         expect(pet.isAlive).toEqual(false)
     });
 });
-   
+    describe('Having a Child', () => {
+        it('the children property contains an instance of an object', () => {
+            const pet = new Pet('Fido');
+            expect(pet.children).toBeInstanceOf(Object)
+        });   
+});
