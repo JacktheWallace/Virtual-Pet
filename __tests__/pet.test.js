@@ -151,7 +151,7 @@ it('new pets start alive', () => {
             const parent = new Pet('Fido');
             const child = new Pet('Frida');
             parent.adopt(child)
-            expect(parent.children).toBe([ child ])
+            expect(parent.children).toEqual([ {"age": 0, "children": [], "fitness": 10, "hunger": 0, "name": "Frida"} ])
         });
         it('does not allow a pet to adopt if they are dead', () => {
             const pet = new Pet('Fido')

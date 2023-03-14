@@ -56,5 +56,15 @@ function Pet(name) {
             return "All is well"
         };
     };
+    Pet.prototype.adopt = function (object) {
+        if(!this.isAlive) {
+            throw new Error('Your pet is no longer alive :(');
+        } else {
+            this.children.push(object)
+        }
+    }
+
+      
+
 
 module.exports = Pet
