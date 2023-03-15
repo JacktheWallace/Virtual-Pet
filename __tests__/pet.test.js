@@ -158,4 +158,10 @@ it('new pets start alive', () => {
             pet.age = 31
             expect(() => pet.adopt()).toThrow('Your pet is no longer alive :(')
         })
+        it('allows the pet to have its own children by making a new instance of a pet', () => {
+            const pet = new Pet('Fido')
+            pet.haveChild
+            expect(scionOfFido).toBeInstanceOf(Object);
+
+        })
 }); 
