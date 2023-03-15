@@ -153,15 +153,15 @@ it('new pets start alive', () => {
             parent.adopt(child)
             expect(parent.children).toEqual([ {"age": 0, "children": [], "fitness": 10, "hunger": 0, "name": "Frida"} ])
         });
+        
         it('does not allow a pet to adopt if they are dead', () => {
             const pet = new Pet('Fido')
             pet.age = 31
-            expect(() => pet.adopt()).toThrow('Your pet is no longer alive :(')
-        })
+        });          expect(() => pet.adopt()).toThrow('Your pet is no longer alive :(')
+        
         it('allows the pet to have its own children by making a new instance of a pet', () => {
-            const pet = new Pet('Fido')
-            pet.haveChild
-            expect(scionOfFido).toBeInstanceOf(Object);
-
-        })
-}); 
+        const pet = new Pet('Fido')
+        pet.haveChild('Scion of Fido!')
+        expect(fidosChild.name).toEqual('Scion of Fido!');
+        });
+    });
