@@ -142,7 +142,7 @@ it('new pets start alive', () => {
         expect(pet.isAlive).toEqual(false)
     });
 });
-    describe('Having a Child', () => {
+    describe('Having a Child through adoption', () => {
         it('the children property contains an instance of an object', () => {
             const pet = new Pet('Fido');
             expect(pet.children).toBeInstanceOf(Object)
@@ -153,15 +153,26 @@ it('new pets start alive', () => {
             parent.adopt(child)
             expect(parent.children).toEqual([ {"age": 0, "children": [], "fitness": 10, "hunger": 0, "name": "Frida"} ])
         });
-        
         it('does not allow a pet to adopt if they are dead', () => {
-            const pet = new Pet('Fido')
-            pet.age = 31
-        });          expect(() => pet.adopt()).toThrow('Your pet is no longer alive :(')
-        
+            const parent = new Pet('Fido')
+            const child = new Pet('Frida')
+            parent.age = 31
+            expect(() => parent.adopt(child)).toThrow('Your pet is no longer alive :(')
+        });          
         it('allows the pet to have its own children by making a new instance of a pet', () => {
-        const pet = new Pet('Fido')
-        pet.haveChild('Scion of Fido!')
-        expect(fidosChild.name).toEqual('Scion of Fido!');
+            const pet = new Pet('Fido')
+            pet.haveChild('Frida')
+            expect(fidosChild.name).toEqual('Frida');
         });
-    });
+        it('doesnt allow dead pets to have children', () = {
+            const pet = new Pet('Fido');
+            pet.age = 31;
+            expect(() => pet.haveChild('Frida')).toThrow('Your pet is no longer alive :(')
+        });
+        it('adds new children to the children property when made', () => {
+            const pet =new Pet('Fido');
+            pet.haveChild('Frida');
+            expect(pet.children).toEqual([ {"age": 0, "children": [], "fitness": 10, "hunger": 0, "name": "Frida"} ])
+        });
+
+        });
